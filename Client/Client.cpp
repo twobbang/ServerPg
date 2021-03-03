@@ -2,7 +2,7 @@
 #include <string>
 #include <boost/asio.hpp>
 
-using namespace std;
+using boost::asio::ip::tcp;
 
 int main(int argc, char* argv[])
 {
@@ -14,10 +14,10 @@ int main(int argc, char* argv[])
 			return 1;
 		}
 
-		tcp::iostream stream(argv[1], std::to_string(int(13)); //port number 13
+		tcp::iostream stream(argv[1], std::to_string(int(13))); //port number 13
 		if (!stream)
 		{
-			std::cout << "Unabled to connect:" << stream.error(), message() << std::endl;
+			std::cout << "Unabled to connect:" << stream.error().message() << std::endl;
 			return 1;
 		}
 
@@ -27,7 +27,7 @@ int main(int argc, char* argv[])
 
 		//recieve message from server
 		std::string line;
-		std::getline(stream, lien);
+		std::getline(stream, line);
 		std::cout << line << std::endl;
 	}
 	catch (const std::exception& e)
