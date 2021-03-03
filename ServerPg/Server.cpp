@@ -24,10 +24,10 @@ int main()
 			std::cout << "check 1" << std::endl;
 			
 			boost::system::error_code ec;
-			acceptor.accept(*stream.rdbuf(), ec);
+			acceptor.accept(*stream.rdbuf(), ec); //client check, stream:Tcp/ip iostream
 			std::cout << "check 2" << std::endl;
 
-			if(!ec)
+			if(!ec) //client connected
 			{ 
 				//receive message from client
 				std::string line;

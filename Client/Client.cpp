@@ -4,7 +4,7 @@
 
 using boost::asio::ip::tcp;
 
-int main(int argc, char* argv[])
+int main(int argc, char* argv[]) //서버의 주소를 입력 받음
 {
 	try
 	{
